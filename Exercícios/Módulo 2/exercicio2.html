@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+    <div id="app">
+    </div>
+
+    
+
+    <script>
+
+        function getRandomColor(){
+            var letters ="0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+
+        //cria botão
+        var btnElement = document.createElement("button");
+        var btnText = document.createTextNode("Gerar Quadrado");
+        btnElement.appendChild(btnText);
+
+        //seleciona a div #app e adiciona o botão
+        containerElement = document.querySelector('#app');
+        containerElement.appendChild(btnElement);
+
+        
+
+
+          btnElement.onclick = function(){
+
+            var boxElement = document.createElement("div");
+            boxElement.setAttribute('class','box');
+            boxElement.style.width = 100;
+            boxElement.style.height = 100;
+            boxElement.style.backgroundColor = "#f00";
+
+            boxElement.onmouseover = function(){
+                boxElement.style.backgroundColor = getRandomColor();
+            }
+            
+            containerElement.appendChild(boxElement);
+
+
+
+        }
+
+
+       
+
+        
+    
+
+    </script>
+
+</body>
+</html>

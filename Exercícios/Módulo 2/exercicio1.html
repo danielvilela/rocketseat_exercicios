@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+    <div id="app">
+
+    </div>
+
+    
+
+    <script>
+
+        var btnElement = document.createElement("button");
+        var btnText = document.createTextNode("Gerar Quadrado");
+        btnElement.appendChild(btnText);
+        containerElement = document.querySelector('#app');
+
+        containerElement.appendChild(btnElement);
+
+        btnElement.onclick = function(){
+            var boxElement = document.createElement("div");
+            boxElement.style.width = 100;
+            boxElement.style.height = 100;
+            boxElement.style.backgroundColor = "#f00";
+            containerElement.appendChild(boxElement);
+        }
+
+    </script>
+
+</body>
+</html>
