@@ -8,9 +8,9 @@
 
     <div id="app">
 
-        <ul>
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>
 
-        </ul>
 
     </div>
 
@@ -20,16 +20,24 @@
         var containerElement = document.querySelector("#app");
         var nomes = ["Diego", "Gabriel", "Lucas"];
         var listElement = document.createElement("ul");
+        var inputElement = document.querySelector("[name=nome]");
 
 
         for (nome of nomes) {
             var itemElement = document.createElement("li");
             var textElement = document.createTextNode(nome);
-            console.log(textElement);
             itemElement.appendChild(textElement);
             listElement.appendChild(itemElement);
         }
 
+        function adicionar() {
+            var itemLista = document.createElement("li");
+            var textoLista = document.createTextNode(inputElement.value);
+            itemLista.appendChild(textoLista);
+            listElement.appendChild(itemLista);
+
+            inputElement.value = "";
+        }
 
         containerElement.appendChild(listElement);
 
