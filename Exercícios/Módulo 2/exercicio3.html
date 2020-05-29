@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+    <div id="app">
+
+        <ul>
+            
+        </ul>
+
+    </div>
+
+    
+
+    <script>
+        var containerElement = document.querySelector("#app");
+        var nomes = ["Diego","Gabriel","Lucas"];
+        var listElement = document.createElement("ul");
+
+
+        for(nome of nomes){
+            var itemElement = document.createElement("li");
+            var textElement = document.createTextNode(nome);
+            console.log(textElement);
+            itemElement.appendChild(textElement);
+            listElement.appendChild(itemElement);
+        }
+
+
+        containerElement.appendChild(listElement);
+
+
+   
+
+    </script>
+
+</body>
+</html>
